@@ -3,7 +3,7 @@ SELECT dest, distance FROM flights GROUP BY dest, distance ORDER BY distance DES
 # HNL
 
 #2
-SELECT engines, MAX(seats) FROM planes GROUP BY engines HAVING MAX(seats);
+SELECT engines, MAX(seats) FROM planes GROUP BY engines;
 
 SELECT tailnum, engines, seats FROM planes WHERE engines = 1 AND seats = 16
 OR engines = 2 AND seats = 400
