@@ -26,8 +26,6 @@ SELECT carrier, COUNT(*) AS 'Num_Flight' FROM flights GROUP BY carrier ORDER BY 
 SELECT carrier, COUNT(*) AS 'Num_Flight' FROM flights WHERE distance >= 1000 GROUP BY carrier ORDER BY Num_Flight DESC LIMIT 5;
 
 #8 Show the number of departures with delay longer than 20 minutes in JFK and all origins seperately by month.
-SELECT COUNT(*) AS 'JFK_dd', month FROM flights WHERE origin = 'JFK' AND dep_delay > 20 GROUP BY month ORDER BY JFK_dd DESC;
-
 SELECT month, 
 	sum(case when origin = 'JFK' AND dep_delay > 20 then 1 else 0 end) as 'JFK Delay Count',
     sum(case when dep_delay > 20 then 1 else 0 end) as 'Overall Delay Count'
